@@ -2,7 +2,7 @@
 
 #########################################################
 #							#
-#  The program send.py send the temperature through	#
+#  The program send_fake.py send and attack to IP	#
 #  the protocol IP/TCP in raw data to dst_ip.		#
 #  The temperature is simulated by a sinus with the 	#
 #  the range of the temp, plus the mean temp plus 	#
@@ -23,7 +23,7 @@ def sender(message):
 	# Transform the ints to string to send it
 	line = str(unichr(int(x1)))+","+str(unichr(int(x2)))
 	# Create the package
-	sendp(Ether()/IP(dst=dst_ip)/TCP()/line)
+	sendp(Ether()/IP(dst=dst_ip)/TCP()/"ESTE PAQUETE ES 100% REAL 0% FAKEESTE PAQUETE ES 100% REAL 0% FAKE ")
 	print(line)
 
 # Temp_reader function simulates the output of a temp sensor

@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
-from scapy.all import *
+
 from random import random
 from math import sin, floor
-from scipy.stats import norm
 
 
 

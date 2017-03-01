@@ -36,8 +36,17 @@ def analyzer(x):
 		hash_k = int(key, 16)/(10.0**84)
 		print(hash_k)
 		# Compute the probability of the new hash to belong to the normal distribution
-		prob = norm_pdf(hash_k, median, var)
+		prob=(hash_k-(media))/(media+var)
+		
+		#comentado para demo
+		#prob = norm_pdf(hash_k, media, var)
 		print(prob)
+		#comentado para la demo
+		#if prob<0.05 or prob>0.95:
+		#	pktdump.write(x)
+		#	print("Esta siendo atacado por la IP:")
+		#	print(x.src)
+		
 		# If the algorithm are not at 90% sure about if it belongs to the normal distribution
 		# the new package is considered an attack, the package is saved and the IP of the 
 		# agressor is shown.
